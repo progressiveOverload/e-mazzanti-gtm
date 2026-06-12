@@ -16,7 +16,7 @@ nodes = [
         "code",
         (0, 0),
         {
-            "content": """### Code Block 
+            "content": """### Execution Layer
 ```python
 print('Hello World')
 ```"""
@@ -29,7 +29,7 @@ print('Hello World')
         "tasks",
         (0, 0),
         {
-            "content": """## Tasklist
+            "content": """## SOP's, Playbooks and Task Lists
 
 * [ ] to do
 * [x] done
@@ -43,9 +43,9 @@ print('Hello World')
         "image",
         (0, 0),
         {
-            "content": """### Image
-<img src="https://i.imgur.com/rKSV8m2.jpg" alt="Image 1" width="200">
-<img src="https://i.imgur.com/6vrPiw6.jpg" alt="Image 2" width="200">
+            "content": """### Intent, Triggers and Proactivity
+<img src="https://i.imgur.com/rKSV8m2.jpg" alt="Image 1" width="500">
+<img src="https://i.imgur.com/6vrPiw6.jpg" alt="Image 2" width="500">
 """
         },
         "output",
@@ -67,5 +67,5 @@ streamlit_flow(
     st.session_state.markdown_node_state,
     layout=RadialLayout(),
     fit_view=True,
-    height=1000,
+    height=1800,
 )
