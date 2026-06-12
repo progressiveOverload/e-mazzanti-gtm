@@ -13,6 +13,14 @@ nodes = [
         "bottom",
     ),
     StreamlitFlowNode(
+        "human_loop",
+        (0, 0),
+        {"content": "## Human in the Loop"},
+        "default",
+        "bottom",
+        "top",
+    ),
+    StreamlitFlowNode(
         "code",
         (0, 0),
         {
@@ -43,7 +51,7 @@ print('Hello World')
         "image",
         (0, 0),
         {
-            "content": """### Intent, Triggers and Proactivity
+            "content": """### Intent, Triggers and Proactivit (or just after the pain)
 <img src="https://i.imgur.com/rKSV8m2.jpg" alt="Image 1" width="500">
 <img src="https://i.imgur.com/6vrPiw6.jpg" alt="Image 2" width="500">
 """
@@ -55,9 +63,10 @@ print('Hello World')
 ]
 
 edges = [
-    StreamlitFlowEdge("main-code", "main", "code", animated=True),
-    StreamlitFlowEdge("main-tasks", "main", "tasks", animated=True),
-    StreamlitFlowEdge("main-image", "main", "image", animated=True),
+    StreamlitFlowEdge("main-human_loop", "main", "human_loop", animated=True),
+    StreamlitFlowEdge("human_loop-code", "human_loop", "code", animated=True),
+    StreamlitFlowEdge("human_loop-tasks", "human_loop", "tasks", animated=True),
+    StreamlitFlowEdge("human_loop-image", "human_loop", "image", animated=True),
 ]
 
 if "markdown_node_state" not in st.session_state:
